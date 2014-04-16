@@ -1,0 +1,5 @@
+C:\Users\Jonathan\Develop\Kurser\Mobilapplikationer\xamarin\lastfm\lastfm.DL\bin\Debug\lastfm.DL.dll
+C:\Users\Jonathan\Develop\Kurser\Mobilapplikationer\xamarin\lastfm\lastfm.DL\bin\Debug\lastfm.DL.pdb
+C:\Users\Jonathan\Develop\Kurser\Mobilapplikationer\xamarin\lastfm\lastfm.DL\obj\Debug\lastfm.DL.dll
+C:\Users\Jonathan\Develop\Kurser\Mobilapplikationer\xamarin\lastfm\lastfm.DL\obj\Debug\lastfm.DL.pdb
+C:\Users\Jonathan\Develop\Kurser\Mobilapplikationer\xamarin\lastfm\lastfm.DL\obj\Debug\lastfm.DL.csprojResolveAssemblyReference.cache

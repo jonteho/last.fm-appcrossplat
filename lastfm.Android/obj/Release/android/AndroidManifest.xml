@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="lastfm.Android">
+  <uses-sdk android:minSdkVersion="12" android:targetSdkVersion="19" />
+  <application android:name="mono.android.app.Application">
+    <activity android:icon="@drawable/lastfm" android:label="last.fm" android:parentActivityName="lastfm.android.activities.StartFragmentActivity" android:name="lastfm.android.activities.ArtistActivity" />
+    <activity android:icon="@drawable/lastfm" android:label="lastfm.Info" android:name="lastfm.android.activities.InfoActivity" />
+    <activity android:noHistory="true" android:theme="@style/Theme.Splash" android:name="lastfm.android.activities.SplashActivity" />
+    <activity android:icon="@drawable/lastfm" android:label="last.fm" android:name="lastfm.android.activities.StartFragmentActivity" />
+    <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="2147483647" android:authorities="lastfm.Android.mono.MonoRuntimeProvider.__mono_init__" />
+    <activity android:noHistory="true" android:theme="@style/Mono.Android.Theme.Splash" android:name="lastfm.android.TrialSplashScreen">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+  </application>
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.INTERNET" />
+</manifest>

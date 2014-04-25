@@ -2,7 +2,7 @@ package lastfm.android.activities;
 
 
 public class StartFragmentActivity
-	extends com.actionbarsherlock.app.SherlockActivity
+	extends com.actionbarsherlock.app.SherlockFragmentActivity
 	implements
 		mono.android.IGCUserPeer,
 		com.actionbarsherlock.widget.SearchView.OnQueryTextListener

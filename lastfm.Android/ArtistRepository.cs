@@ -53,5 +53,33 @@ namespace lastfm.Android
             });
         }
 
+        public async Task<TopTracks> GetTopTracksAsync(string artist)
+        {
+            return await Task.Factory.StartNew(() =>
+            {
+                var client = new RestClient(_clientUrl);
+                var request = new RestRequest("2.0/");
+                request.AddParameter("method", "artist.gettoptracks");
+                request.AddParameter("artist", artist);
+                request.AddParameter("api_key", _apiKey);
+                var response = client.Execute<TopTracks>(request);
+                return response.Data;
+            });
+        }
+
+        public async Task<TopAlbums> GetTopAlbumsAsync(string artist)
+        {
+            return await Task.Factory.StartNew(() =>
+            {
+                var client = new RestClient(_clientUrl);
+                var request = new RestRequest("2.0/");
+                request.AddParameter("method", "artist.gettopalbums");
+                request.AddParameter("artist", artist);
+                request.AddParameter("api_key", _apiKey);
+                var response = client.Execute<TopAlbums>(request);
+                return response.Data;
+            });
+        }
+
     }
 }

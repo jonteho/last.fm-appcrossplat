@@ -49,11 +49,21 @@ namespace lastfmAndroidFragments
                     _artistActivity.SetSupportProgressBarIndeterminateVisibility(true);
                     var artistName = await _repository.FindArtistAsync(selectedFromList);
                     var artist = await _repository.SearchArtistAsync(artistName);
+                    var toptracks = await _repository.GetTopTracksAsync(artist.Name);
+                    var topAlbums = await _repository.GetTopAlbumsAsync(artist.Name);
+                    
                     // Serialisera objektet och skicka det till artistactivity...
                     var json = JsonConvert.SerializeObject(artist);
+                    var jsonTopTracks = JsonConvert.SerializeObject(toptracks);
+                    var jsonTopAlbums = JsonConvert.SerializeObject(topAlbums);
+
                     var artistActivity = new Intent(this.Activity, typeof(ArtistActivity));
+
                     artistActivity.PutExtra("Artist", json);
+                    artistActivity.PutExtra("TopTracks", jsonTopTracks);
+                    artistActivity.PutExtra("TopAlbums", jsonTopAlbums);
                     StartActivity(artistActivity);
+
                     _artistActivity.SetSupportProgressBarIndeterminateVisibility(false);
                 }
                 catch (Exception ex)

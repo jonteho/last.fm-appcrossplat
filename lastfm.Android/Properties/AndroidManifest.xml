@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
-	<uses-sdk android:minSdkVersion="12" android:targetSdkVersion="19" />
-	<application></application>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" android:versionName="0.1" android:versionCode="1" package="lastfm.lastfm">
+	<uses-sdk android:minSdkVersion="4" android:targetSdkVersion="19" />
+	<application android:icon="@drawable/lastfm2" android:label="last.fm"></application>
 </manifest>

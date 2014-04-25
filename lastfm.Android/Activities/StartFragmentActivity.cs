@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using Android.App;
 using Android.Content;
 using Android.Graphics;
@@ -23,7 +24,8 @@ namespace lastfm.Android.Activities
         
         protected override void OnCreate(Bundle bundle)
         {
-            SetTheme(Resource.Style.Theme_Sherlock_Light);
+            //SetTheme(Resource.Style.Theme_Sherlock_Light);
+            SetTheme(Resource.Style.Theme_Example);
             base.OnCreate(bundle);
 
             RequestWindowFeature(WindowFeatures.IndeterminateProgress);
@@ -62,11 +64,19 @@ namespace lastfm.Android.Activities
                 {
                     var artistName = await _repository.FindArtistAsync(e.Query);
                     var artist = await _repository.SearchArtistAsync(artistName);
+                    var topTracks = await _repository.GetTopTracksAsync(artist.Name);
+                    var topAlbums = await _repository.GetTopAlbumsAsync(artist.Name);
 
                     // Serialisera objektet och skicka det till artistactivity...
-                    var json = JsonConvert.SerializeObject(artist);
+                    var jsonArtist = JsonConvert.SerializeObject(artist);
+                    var jsonTopTracks = JsonConvert.SerializeObject(topTracks.Take(15));
+                    var jsonTopAlbums = JsonConvert.SerializeObject(topAlbums.Take(5));
+
                     var artistActivity = new Intent(this, typeof(ArtistActivity));
-                    artistActivity.PutExtra("Artist", json);
+
+                    artistActivity.PutExtra("Artist", jsonArtist);
+                    artistActivity.PutExtra("TopTracks", jsonTopTracks);
+                    artistActivity.PutExtra("TopAlbums", jsonTopAlbums);
 
                     SetSupportProgressBarIndeterminateVisibility(false);
                     StartActivity(artistActivity);

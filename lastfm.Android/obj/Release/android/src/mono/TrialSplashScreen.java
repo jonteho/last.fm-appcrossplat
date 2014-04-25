@@ -1,4 +1,4 @@
-package lastfm.android;
+package lastfm.lastfm;
 
 import android.app.Activity;
 import android.content.Context;

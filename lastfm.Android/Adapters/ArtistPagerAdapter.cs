@@ -28,6 +28,8 @@ namespace lastfm.Android
             this.fragments = new List<Fragment>();
             fragments.Add(new FragmentArtist());
             fragments.Add(new FragmentSimilarArtists());
+            fragments.Add(new FragmentTopTracks());
+            fragments.Add(new FragmentTopAlbums());
             fragmentCount = fragments.Count;
         }
 
